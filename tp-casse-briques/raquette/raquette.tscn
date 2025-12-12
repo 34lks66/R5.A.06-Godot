@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8gdrejq8m5an"]
+
+[ext_resource type="Texture2D" uid="uid://c8mlvn4i8vf3f" path="res://raquette/sin_raquette_a.tres" id="1_w6mu3"]
+
+[node name="Raquette" type="CharacterBody2D"]
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_w6mu3")
+
+[node name="Control Joueur" type="Node" parent="."]
