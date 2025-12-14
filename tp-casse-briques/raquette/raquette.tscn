@@ -1,10 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://b8gdrejq8m5an"]
+[gd_scene load_steps=3 format=3 uid="uid://b8gdrejq8m5an"]
 
+[ext_resource type="Script" uid="uid://c8xrwduguirl7" path="res://raquette/ControlJoueur.gd" id="1_8wwvb"]
 [ext_resource type="Texture2D" uid="uid://c8mlvn4i8vf3f" path="res://raquette/sin_raquette_a.tres" id="1_w6mu3"]
 
 [node name="Raquette" type="CharacterBody2D"]
+script = ExtResource("1_8wwvb")
 
 [node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(550, 550)
+scale = Vector2(1, 0.9814815)
 texture = ExtResource("1_w6mu3")
-
-[node name="Control Joueur" type="Node" parent="."]
