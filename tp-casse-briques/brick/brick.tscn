@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://dibiaistk5od8"]
+
+[ext_resource type="Texture2D" uid="uid://cj1e0juynue8d" path="res://assets/more_breakout_pieces.png" id="1_1bmya"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1bmya"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bmya"]
+size = Vector2(83, 28)
+
+[node name="Brick" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_1bmya")
+gravity_scale = 0.0
+can_sleep = false
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(553, 264)
+texture = ExtResource("1_1bmya")
+region_enabled = true
+region_rect = Rect2(672.87787, 207.91385, 77.73419, 16.528412)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(555, 262)
+shape = SubResource("RectangleShape2D_1bmya")
