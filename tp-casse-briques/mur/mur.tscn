@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0a1ihoeat7nq"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_b5jeu"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b5jeu"]
+size = Vector2(1161, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3wqp3"]
+size = Vector2(18, 665)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ljofq"]
+size = Vector2(20, 662)
+
+[node name="Mur" type="StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_b5jeu")
+
+[node name="mur_haut" type="CollisionShape2D" parent="."]
+position = Vector2(570.5, 0)
+shape = SubResource("RectangleShape2D_b5jeu")
+
+[node name="mur_gauche" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 322.5)
+shape = SubResource("RectangleShape2D_3wqp3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1153, 321)
+shape = SubResource("RectangleShape2D_ljofq")
