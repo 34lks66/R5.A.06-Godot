@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://myobk58tnr1q"]
+[gd_scene load_steps=4 format=3 uid="uid://myobk58tnr1q"]
 
 [ext_resource type="PackedScene" uid="uid://b8gdrejq8m5an" path="res://raquette/raquette.tscn" id="1_jdc37"]
+[ext_resource type="PackedScene" uid="uid://do72u7vjlw4mt" path="res://balle/balle.tscn" id="2_jdc37"]
+[ext_resource type="Script" uid="uid://mof0k722q28i" path="res://balle/balle.gd" id="3_1sqh6"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -12,3 +14,8 @@ offset_bottom = 328.0
 text = "Hello world"
 
 [node name="Raquette" parent="." instance=ExtResource("1_jdc37")]
+position = Vector2(2, 2)
+
+[node name="Balle" parent="." instance=ExtResource("2_jdc37")]
+position = Vector2(3, 1)
+script = ExtResource("3_1sqh6")
