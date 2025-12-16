@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://myobk58tnr1q"]
+[gd_scene load_steps=7 format=3 uid="uid://myobk58tnr1q"]
 
 [ext_resource type="PackedScene" uid="uid://b8gdrejq8m5an" path="res://raquette/raquette.tscn" id="1_jdc37"]
 [ext_resource type="PackedScene" uid="uid://do72u7vjlw4mt" path="res://balle/balle.tscn" id="2_jdc37"]
 [ext_resource type="Script" uid="uid://mof0k722q28i" path="res://balle/balle.gd" id="3_1sqh6"]
 [ext_resource type="PackedScene" uid="uid://c0a1ihoeat7nq" path="res://mur/mur.tscn" id="4_ghjii"]
+[ext_resource type="PackedScene" uid="uid://c2sj5br7nbyv0" path="res://fosse/fosse.tscn" id="5_0eiif"]
+[ext_resource type="Script" uid="uid://dgyw6y8nhq2lg" path="res://fosse/fosse.gd" id="6_vaoxn"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -22,3 +24,7 @@ position = Vector2(3, 1)
 script = ExtResource("3_1sqh6")
 
 [node name="Mur" parent="." instance=ExtResource("4_ghjii")]
+
+[node name="Fosse" parent="." instance=ExtResource("5_0eiif")]
+position = Vector2(577, 638)
+script = ExtResource("6_vaoxn")
