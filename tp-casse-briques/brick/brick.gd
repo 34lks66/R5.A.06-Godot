@@ -1,14 +1,16 @@
-extends RigidBody2D
+extends Area2D
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	connect("body_entered", _on_body_entered)
+	pass # Replace with function body.
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
+
 func _on_body_entered(body):
 	if body.is_in_group("ball"):
-		queue_free()
+		get_parent().queue_free()

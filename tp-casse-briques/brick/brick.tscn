@@ -1,28 +1,37 @@
-[gd_scene load_steps=4 format=3 uid="uid://dibiaistk5od8"]
+[gd_scene load_steps=6 format=3 uid="uid://bngmyrrx6ws6m"]
 
 [ext_resource type="Texture2D" uid="uid://cj1e0juynue8d" path="res://assets/more_breakout_pieces.png" id="1_1bmya"]
+[ext_resource type="Script" uid="uid://546trp4sw04" path="res://brick/brick.gd" id="2_84gwy"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1bmya"]
 friction = 0.0
 bounce = 1.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bmya"]
-size = Vector2(83, 28)
+size = Vector2(76, 19)
 
-[node name="Brick" type="RigidBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_84gwy"]
+size = Vector2(76, 17)
+
+[node name="Brick" type="StaticBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_1bmya")
-gravity_scale = 0.0
-can_sleep = false
-freeze = true
-contact_monitor = true
-max_contacts_reported = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(553, 264)
+position = Vector2(549.0974, 286.37723)
+scale = Vector2(-0.9138588, 0.8679084)
 texture = ExtResource("1_1bmya")
 region_enabled = true
-region_rect = Rect2(672.87787, 207.91385, 77.73419, 16.528412)
+region_rect = Rect2(671.41016, 208.11708, 79.807495, 17.349442)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(555, 262)
+position = Vector2(548.09735, 284.87723)
 shape = SubResource("RectangleShape2D_1bmya")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_84gwy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(548.09735, 285.87723)
+shape = SubResource("RectangleShape2D_84gwy")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
