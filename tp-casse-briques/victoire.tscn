@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://djv8uxm88wmvc"]
+
+[ext_resource type="Script" uid="uid://dqviqx5h8k0ns" path="res://button.gd" id="1_jcfhk"]
+
+[node name="Victoire" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 431.0
+offset_top = 204.0
+offset_right = 813.0
+offset_bottom = 415.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 553.0
+offset_top = 272.0
+offset_right = 693.0
+offset_bottom = 295.0
+text = "Vous avez gagné :) "
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 589.0
+offset_top = 329.0
+offset_right = 657.0
+offset_bottom = 360.0
+text = "Rejouer"
+script = ExtResource("1_jcfhk")

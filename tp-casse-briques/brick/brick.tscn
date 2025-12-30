@@ -13,7 +13,7 @@ size = Vector2(76, 19)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_84gwy"]
 size = Vector2(76, 17)
 
-[node name="Brick" type="StaticBody2D"]
+[node name="Brick" type="StaticBody2D" groups=["brick"]]
 physics_material_override = SubResource("PhysicsMaterial_1bmya")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

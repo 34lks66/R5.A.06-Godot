@@ -12,4 +12,4 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body):
 	if body.is_in_group("ball"):
-		get_tree().change_scene_to_file("res://perdu.tscn") 
+		get_tree().change_scene_to_file("res://perdu.tscn")
