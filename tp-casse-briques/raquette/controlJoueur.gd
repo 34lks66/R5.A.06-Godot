@@ -32,4 +32,5 @@ func _physics_process(delta):
 			
 func _on_ball_hit():
 	$AudioStreamPlayer.play()
+	$AnimationPlayer.play("hit")
 	

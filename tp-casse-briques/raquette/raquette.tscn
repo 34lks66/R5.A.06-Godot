@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8gdrejq8m5an"]
+[gd_scene load_steps=9 format=3 uid="uid://b8gdrejq8m5an"]
 
 [ext_resource type="Script" uid="uid://c8xrwduguirl7" path="res://raquette/ControlJoueur.gd" id="1_8wwvb"]
 [ext_resource type="Texture2D" uid="uid://c8mlvn4i8vf3f" path="res://raquette/sin_raquette_a.tres" id="1_w6mu3"]
@@ -7,6 +7,42 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8wwvb"]
 size = Vector2(78, 33)
+
+[sub_resource type="Animation" id="Animation_jdb1i"]
+resource_name = "hit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06, 0.12),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.15, 0.85), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_uvb7y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 0.9814815)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_652gn"]
+_data = {
+&"RESET": SubResource("Animation_uvb7y"),
+&"hit": SubResource("Animation_jdb1i")
+}
 
 [node name="Raquette" type="CharacterBody2D"]
 script = ExtResource("1_8wwvb")
@@ -27,3 +63,8 @@ volume_db = -10.0
 [node name="AudioMouvementRaquette" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_jdb1i")
 volume_db = -10.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_652gn")
+}
