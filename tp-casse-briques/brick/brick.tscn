@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bngmyrrx6ws6m"]
+[gd_scene load_steps=7 format=3 uid="uid://bngmyrrx6ws6m"]
 
 [ext_resource type="Texture2D" uid="uid://cj1e0juynue8d" path="res://assets/more_breakout_pieces.png" id="1_1bmya"]
 [ext_resource type="Script" uid="uid://546trp4sw04" path="res://brick/brick.gd" id="2_84gwy"]
+[ext_resource type="AudioStream" uid="uid://dxeeahxxilye7" path="res://assets/The Essential Retro Video Game Sound Effects Collection [512 sounds] By Juhani Junkala/Weapons/Shotgun/sfx_weapon_shotgun3.wav" id="3_geq20"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1bmya"]
 friction = 0.0
@@ -33,5 +34,9 @@ script = ExtResource("2_84gwy")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(548.09735, 285.87723)
 shape = SubResource("RectangleShape2D_84gwy")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_geq20")
+volume_db = -10.0
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

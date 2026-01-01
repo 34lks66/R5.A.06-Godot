@@ -1,10 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://djv8uxm88wmvc"]
+[gd_scene load_steps=4 format=3 uid="uid://djv8uxm88wmvc"]
 
+[ext_resource type="Script" uid="uid://duxlveh6o4lq7" path="res://victoire_son.gd" id="1_ipexg"]
 [ext_resource type="Script" uid="uid://dqviqx5h8k0ns" path="res://button.gd" id="1_jcfhk"]
+[ext_resource type="AudioStream" uid="uid://b4hgjsniv5kx7" path="res://assets/The Essential Retro Video Game Sound Effects Collection [512 sounds] By Juhani Junkala/General Sounds/Positive Sounds/sfx_sounds_powerup18.wav" id="2_dxjc2"]
 
 [node name="Victoire" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_ipexg")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -30,3 +33,7 @@ offset_right = 657.0
 offset_bottom = 360.0
 text = "Rejouer"
 script = ExtResource("1_jcfhk")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_dxjc2")
+volume_db = -10.0

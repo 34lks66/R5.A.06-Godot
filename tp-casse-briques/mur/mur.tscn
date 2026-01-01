@@ -1,4 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0a1ihoeat7nq"]
+[gd_scene load_steps=7 format=3 uid="uid://c0a1ihoeat7nq"]
+
+[ext_resource type="AudioStream" uid="uid://hxutyw7xeyb0" path="res://assets/The Essential Retro Video Game Sound Effects Collection [512 sounds] By Juhani Junkala/General Sounds/Negative Sounds/sfx_sounds_error2.wav" id="1_ljofq"]
+[ext_resource type="Script" uid="uid://b0i6q4lnpums7" path="res://mur/mur_son.gd" id="2_ljofq"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_b5jeu"]
 friction = 0.0
@@ -16,6 +19,10 @@ size = Vector2(20, 662)
 [node name="Mur" type="StaticBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_b5jeu")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_ljofq")
+volume_db = -10.0
+
 [node name="mur_haut" type="CollisionShape2D" parent="."]
 position = Vector2(570.5, 0)
 shape = SubResource("RectangleShape2D_b5jeu")
@@ -24,6 +31,23 @@ shape = SubResource("RectangleShape2D_b5jeu")
 position = Vector2(-1, 322.5)
 shape = SubResource("RectangleShape2D_3wqp3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="mur_droit" type="CollisionShape2D" parent="."]
 position = Vector2(1153, 321)
 shape = SubResource("RectangleShape2D_ljofq")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_ljofq")
+
+[node name="mur_haut" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(570.5, 0)
+shape = SubResource("RectangleShape2D_b5jeu")
+
+[node name="mur_gauche" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 322.5)
+shape = SubResource("RectangleShape2D_3wqp3")
+
+[node name="mur_droit" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1153, 321)
+shape = SubResource("RectangleShape2D_ljofq")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

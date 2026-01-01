@@ -23,3 +23,13 @@ func _physics_process(delta):
 	position.x += direction * vitesse * delta
 	
 	position.x = clamp(position.x, -500, screen_size.x - 600)
+	
+	if direction !=0:
+		if not $AudioMouvementRaquette.playing:
+			$AudioMouvementRaquette.play()
+		else:
+			$AudioMouvementRaquette.stop()
+			
+func _on_ball_hit():
+	$AudioStreamPlayer.play()
+	

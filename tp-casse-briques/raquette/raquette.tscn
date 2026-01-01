@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8gdrejq8m5an"]
+[gd_scene load_steps=6 format=3 uid="uid://b8gdrejq8m5an"]
 
 [ext_resource type="Script" uid="uid://c8xrwduguirl7" path="res://raquette/ControlJoueur.gd" id="1_8wwvb"]
 [ext_resource type="Texture2D" uid="uid://c8mlvn4i8vf3f" path="res://raquette/sin_raquette_a.tres" id="1_w6mu3"]
+[ext_resource type="AudioStream" uid="uid://dmqsisenoywte" path="res://assets/The Essential Retro Video Game Sound Effects Collection [512 sounds] By Juhani Junkala/General Sounds/Buttons/sfx_sounds_button6.wav" id="3_rdu13"]
+[ext_resource type="AudioStream" uid="uid://08ptv5nyis6w" path="res://assets/The Essential Retro Video Game Sound Effects Collection [512 sounds] By Juhani Junkala/Movement/Jumping and Landing/sfx_movement_jump18_landing.wav" id="4_jdb1i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8wwvb"]
 size = Vector2(78, 33)
@@ -17,3 +19,11 @@ texture = ExtResource("1_w6mu3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(550, 551.5)
 shape = SubResource("RectangleShape2D_8wwvb")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_rdu13")
+volume_db = -10.0
+
+[node name="AudioMouvementRaquette" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_jdb1i")
+volume_db = -10.0
